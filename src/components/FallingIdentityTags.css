@@ -1,0 +1,14 @@
+.pen-falling-pool { overflow: hidden; isolation: isolate; }
+.pen-falling-pool > .pen-eyebrow { pointer-events: none; }
+.pen-tag-pool .pen-falling-tags { position: absolute; inset: 76px 16px 14px; display: flex; flex-wrap: wrap; align-content: flex-start; justify-content: center; gap: 14px 18px; margin: 0; padding: 10px 14px; list-style: none; }
+.pen-tag-pool .pen-falling-tags .pen-identity-tag { position: relative; top: auto; left: auto; flex: 0 0 auto; max-width: 100%; padding: 9px 16px; font-size: 18px; line-height: 1.25; transform: none; transform-origin: center; user-select: none; -webkit-user-select: none; cursor: grab; touch-action: none; }
+.pen-tag-pool .pen-falling-tags.is-falling .pen-identity-tag { position: absolute; left: 0; top: 0; margin: 0; will-change: transform; }
+.pen-tag-pool .pen-falling-tags.is-dragging, .pen-tag-pool .pen-falling-tags.is-dragging .pen-identity-tag { cursor: grabbing; }
+.pen-falling-tags .pen-identity-tag:focus-visible { outline: 2px solid var(--pen-purple); outline-offset: 4px; }
+@media (max-width: 767px) {
+  .pen-tag-pool.pen-falling-pool { height: 470px; padding: 0; }
+  .pen-tag-pool.pen-falling-pool > .pen-eyebrow { position: absolute; top: 24px; left: 18px; max-width: 65%; font-size: 8px; }
+  .pen-tag-pool .pen-falling-tags { inset: 64px 8px 14px; gap: 10px 8px; padding: 6px; }
+  .pen-tag-pool .pen-falling-tags .pen-identity-tag { padding: 8px 12px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { .pen-tag-pool .pen-falling-tags .pen-identity-tag { cursor: default; } }

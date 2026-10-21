@@ -1,0 +1,15 @@
+.pen-contact-lanyard { --pass-layout-height: 466; position: absolute; inset: 0 auto 0 50%; transform: translateX(-50%); width: 100vw; height: 100%; z-index: 1; }
+.pen-contact-heading { z-index: 2; pointer-events: none; }
+.pen-socials { z-index: 2; }
+.pen-contact-wordmark { pointer-events: none; }
+.contact-pass-fallback { position: absolute; inset: 0; display: flex; justify-content: center; pointer-events: none; }
+.contact-pass-fallback img { position: absolute; top: 196px; height: 331px; width: 235px; object-fit: cover; border-radius: 10px; box-shadow: 0 12px 24px #6240b11c; }
+.contact-pass-fallback-strap { width: 14px; height: 196px; background: #EFEDFF; }
+@media (max-width: 767px) {
+  .pen-contact-lanyard { --pass-layout-height: 442; }
+  .contact-pass-fallback img { top: 186px; height: 314px; width: 223px; }
+  .contact-pass-fallback-strap { height: 186px; }
+}
+
+.pen-socials button:not(:disabled) { cursor: pointer; }
+.pen-socials button:not(:disabled):hover { border-color: var(--pen-purple-border); }

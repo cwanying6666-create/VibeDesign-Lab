@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "./styles/tailwind-theme.css";
+@import "./styles/tokens.css";
+@import "./styles/pen-theme.css";
+@import "./styles/pen-home.css";
+
+:root { font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--pen-font); background: var(--pen-white); color: var(--pen-ink); font-size: var(--pen-text-body); font-weight: var(--pen-weight-regular); line-height: var(--pen-line-default); letter-spacing: normal; }
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+:focus-visible { outline: var(--pen-focus-width) solid var(--pen-blue); outline-offset: var(--pen-focus-offset); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+html { scroll-behavior: auto; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }

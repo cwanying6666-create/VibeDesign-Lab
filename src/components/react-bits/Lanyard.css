@@ -1,0 +1,3 @@
+.lanyard { position: relative; width: 100%; height: 100%; }
+.lanyard-canvas { display: block; width: 100%; height: 100%; touch-action: pan-y; }
+.lanyard-canvas:focus-visible { outline: 2px solid var(--pen-purple); outline-offset: -4px; border-radius: 24px; }

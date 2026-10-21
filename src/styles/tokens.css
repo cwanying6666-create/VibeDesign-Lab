@@ -1,0 +1,129 @@
+:root {
+  /* Semantic colors: primitive values live in tailwind-theme.css. */
+  --color-text-primary: var(--color-carbon);
+  --color-action-primary: var(--color-carbon);
+  --color-action-on-primary: var(--color-paper-white);
+  --color-border-default: var(--color-carbon);
+
+  /* System Chinese fallback is provisional; no bundled font is claimed. */
+  --font-cjk: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+  --font-ui: 'Aeonik Pro', 'Inter', 'Satoshi', 'General Sans', var(--font-cjk);
+  --font-display: 'Lateral', 'Druk', 'Bowlby One', 'Antonio', sans-serif;
+
+  /* Component typography overrides the generic scale where specified. */
+  --text-marquee: 12px;
+  --tracking-nav: 0.032em;
+  --tracking-button: 0.032em;
+  --tracking-label: 0.032em;
+  --tracking-display: normal;
+
+  /* Typography — Weights */
+
+  /* Spacing */
+  --spacing-unit: 4px;
+
+  /* Layout */
+  --page-max-width: 1440px;
+  --section-gap: var(--spacing-48);
+  --card-padding: var(--spacing-24);
+  /* Selected within the documented 4–12px range. */
+  --element-gap: var(--spacing-8);
+  --element-gap-min: var(--spacing-4);
+  --element-gap-max: var(--spacing-12);
+
+  /* Border Radius */
+
+  /* Filled CTA is the documented 40px exception to pill buttons. */
+  --radius-button-primary: 40px;
+
+  /* Named Radii */
+  --radius-nav: 1600px;
+  --radius-body: 30px;
+  --radius-cards: 20px;
+  --radius-pills: 1600px;
+  --radius-buttons: 1600px;
+  --radius-wallet-icon: 16px;
+  --radius-cards-elevated: 40px;
+
+  /* Surfaces */
+  --surface-sky-wash: var(--color-sky-wash);
+  --surface-paper-white: var(--color-paper-white);
+  --surface-concrete-gray: var(--color-concrete-gray);
+  --surface-sticker-surfaces: var(--color-lavender);
+  /* Border, layout and component metrics. */
+  --border-width-default: 1px;
+  --border-style-default: solid;
+  --border-default: var(--border-width-default) var(--border-style-default) var(--color-border-default);
+  --nav-padding-block: 15px;
+  --nav-padding-inline: var(--spacing-12);
+  --nav-gap: var(--spacing-4);
+  --button-padding-block: 10px;
+  --button-padding-inline: var(--spacing-12);
+  --card-gap: var(--spacing-24);
+  --surface-placeholder: var(--color-soft-mist);
+  /* Homepage layout decisions; not source measurements from DESIGN.md. */
+  --page-gutter: var(--spacing-40);
+  --copy-max-width: 900px;
+  --copy-leading: 1.8;
+  --cover-ratio: 16 / 9;
+  --fluid-section-heading: 4.3vw;
+  --fluid-display: 13vw;
+  --text-heading-sm-mobile: 20px;
+  --text-display-mobile-min: 36px;
+  --text-display-mobile-max: 52px;
+  --fluid-display-mobile: 12vw;
+  --social-min-width: 100px;
+  --focus-width: 2px;
+  --focus-offset: var(--spacing-4);
+  --interaction-duration: 160ms;
+  --disabled-opacity: 0.65;
+  --hero-art-width: 52%;
+  --hero-art-offset: -12%;
+  --hero-art-opacity: 1;
+  --hero-art-mobile-width: 85%;
+  --hero-art-mobile-offset: -45%;
+  --hero-art-mobile-opacity: 0.35;
+  /* Approved video hero layout and timing. */
+  --hero-copy-width: 576px;
+  --hero-min-height: 420px;
+  --hero-mobile-min-height: 480px;
+  --hero-type-min: 18px;
+  --hero-type-max: 26px;
+  --hero-type-fluid: 4vw;
+  --hero-type-leading: 1.35;
+  --hero-video-position: 70% center;
+  --hero-wash-opacity: 0.42;
+  --hero-typing-delay: 600ms;
+  --hero-typing-speed: 38ms;
+  --hero-scrub-sensitivity: 0.8;
+  --hero-cursor-width: 2px;
+  --hero-cursor-height: 1.1em;
+  --hero-cursor-gap: 2px;
+  --hero-cursor-period: 1s;
+  /* Article directory and interactive orbit. */
+  --articles-directory-fraction: 38fr;
+  --articles-orbit-fraction: 62fr;
+  --articles-layout-gap: var(--spacing-40);
+  --articles-list-height: 420px;
+  --orbit-height: 600px;
+  --orbit-mobile-height: 360px;
+  --orbit-node-radius: 46px;
+  --orbit-line-width: var(--border-width-default);
+  --orbit-line-color: var(--color-carbon);
+  --orbit-line-opacity: 0.28;
+  --orbit-node-surface: var(--color-soft-mist);
+  --orbit-active-color: var(--color-electric-blue);
+  --orbit-active-width: 3px;
+  --orbit-active-gap: 5px;
+  --orbit-number-size: 16px;
+  --orbit-placeholder-size: 10px;
+  --orbit-drag-threshold: 6px;
+  --orbit-drag-sensitivity: 0.008;
+  --article-number-width: 28px;
+  /* Pointer-driven fluid, explicitly requested interactive visual layer. */
+  --pointer-fluid-opacity: 0.88;
+  --pointer-fluid-radius: 0.00065;
+  --pointer-fluid-life: 6500ms;
+  --pointer-fluid-resolution: 128;
+  --pointer-fluid-layer: 5;
+}

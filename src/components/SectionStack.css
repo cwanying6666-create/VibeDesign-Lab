@@ -1,0 +1,21 @@
+.pen-section-stack { --section-stack-top: 86px; position: relative; isolation: isolate; background: var(--pen-white); }
+.pen-section-stack .scroll-stack__inner { padding-inline: 0; }
+.pen-section-stack .scroll-stack-card { --stack-corner: min(40px, var(--scroll-stack-top-gap, 40px)); height: auto; min-height: calc(100svh - var(--section-stack-top)); padding: 0; border-radius: var(--stack-corner) var(--stack-corner) 0 0; color: var(--pen-ink); background: var(--pen-white); box-shadow: none; }
+.pen-section-stack .pen-stack-introduction { border-radius: 0; }
+.pen-section-stack .pen-stack-articles,
+.pen-section-stack .pen-stack-course { box-shadow: 0 -14px 40px -24px rgb(63 39 103 / 22%); }
+.pen-section-stack .pen-stack-course { background: var(--pen-course-bg); }
+.pen-section-stack .pen-course { border-radius: inherit; box-shadow: none; }
+/* Keep the folder's draggable and enlarged pages free of clipping. Only the
+   opaque card background needs a rounded edge. */
+.pen-section-stack .pen-articles { border-radius: inherit; background: var(--pen-white); }
+.pen-section-stack .scroll-stack-card__shade { z-index: 20; }
+@media (max-width: 700px) {
+  .pen-section-stack .scroll-stack-card { --stack-corner: min(28px, var(--scroll-stack-top-gap, 28px)); }
+  .pen-section-stack .pen-stack-introduction { border-radius: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pen-section-stack .scroll-stack__slot { position: relative; top: auto !important; }
+  .pen-section-stack .scroll-stack-card { transform: none !important; filter: none !important; will-change: auto; }
+  .pen-section-stack .scroll-stack-card__shade { display: none; }
+}

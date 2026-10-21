@@ -1,0 +1,52 @@
+/* Keep the selected Pen layout and palette; only the course scene grows for paper. */
+/* One desktop screen, including the completed paper and the entire machine. */
+.pen-course { position: relative; z-index: 2; border-radius: 42px 42px 0 0; box-shadow: 0 -18px 48px #44306c0c; scroll-margin-top: calc(var(--pen-header-height) + 12px); }
+.pen-course .pen-course-stage { container-type: inline-size; width: min(100%, calc((100svh - var(--pen-header-height) - 32px) * 16 / 9), 1440px); height: auto; aspect-ratio: 16 / 9; min-height: 0; padding: 0; }
+/* The scene may shrink on short screens. Keep its copy on the same page
+   gutter as the introduction and articles, independently of scene width. */
+.pen-course .pen-course-eyebrow { top: 6.4%; left: var(--course-copy-left, var(--pen-gutter)); font-size: clamp(9px, .9cqw, 13px); }
+.pen-course .pen-course-copy { top: 51%; left: var(--course-copy-left, var(--pen-gutter)); width: 40%; transform: translateY(-50%); text-align: left; }
+.pen-course .pen-course-copy h2 { font-size: clamp(28px, 4.1cqw, 60px); gap: 12px; }
+.pen-course .pen-course-copy h2 .pen-highlight { font-size: clamp(27px, 3.85cqw, 56px); }
+.pen-course .pen-course-copy p { margin-top: 28px; font-size: clamp(14px, 1.45cqw, 21px); max-width: none; }
+.pen-course .pen-course-copy .pen-button { margin-top: 28px; min-height: 44px; font-size: clamp(15px, 1.5cqw, 22px); }
+.pen-course-note { display: block; margin-top: 20px; font: 500 clamp(12px, 1.1cqw, 16px)/1.5 var(--pen-font-latin); color: var(--pen-purple); }
+.pen-course .pen-workflow { top: 5%; left: 44%; font-size: 7.8cqw; pointer-events: none; }
+.course-printer { position: absolute; top: calc(4% + 16px); right: calc(5% + 24px); width: 46%; height: 92%; margin: 0; isolation: isolate; scroll-margin-top: calc(var(--pen-header-height) + 24px); }
+.course-printer-frame { position: relative; width: 100%; }
+.course-printer-scene { position: absolute; top: 0; left: 50%; width: 680px; transform-origin: top center; }
+.course-paper-window { position: absolute; top: 0; left: 125px; width: 430px; height: var(--paper-slot); overflow: hidden; z-index: 1; }
+.course-paper { position: absolute; bottom: 0; left: 0; width: 100%; padding: 22px 26px 58px; color: #383144; background: #fffcf4; border: 1px solid #e5dfd3; border-radius: 2px 2px 0 0; box-shadow: inset 6px 0 10px #8d7d6b0a, inset -7px 0 10px #8d7d6b0a; font: 400 15px/1.5 var(--pen-font); transform: translateY(calc(100% - 50px)); transition: transform 180ms cubic-bezier(.2,.65,.3,1); will-change: transform; }
+.course-paper::before { position: absolute; content: ''; inset: 0; pointer-events: none; opacity: .14; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23917f65' opacity='.25' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E"); }
+.course-paper-edition { padding-bottom: 8px; border-bottom: 1px solid #c7bbd1; margin-bottom: 10px; font: 500 10px/1.4 var(--pen-font-latin); letter-spacing: 1.5px; color: #776588; }
+.course-paper h3 { font-size: 23px; font-weight: 700; line-height: 1.4; letter-spacing: -.5px; }
+.course-paper-tagline { color: var(--pen-purple); font: 600 20px/1.4 var(--pen-font-latin); margin-top: 5px; }
+.course-paper-intro { margin-top: 9px; font-size: 14px; }
+.course-paper-section { margin-top: 12px; padding-top: 10px; border-top: 1px dashed #c7bbd1; }
+.course-paper-section h4 { margin: 0 0 7px; font-size: 15px; font-weight: 600; }
+.course-paper-section p { min-height: 23px; }
+.course-paper-section .course-paper-outcome { margin-top: 8px; font-size: 13px; color: #675c73; }
+.course-paper-stats { display: flex; justify-content: space-between; gap: 8px; margin-top: 15px; padding-top: 12px; border-top: 1px solid #c7bbd1; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.course-paper-signature { margin-top: 14px; text-align: right; color: var(--pen-purple); font-size: 14px; }
+.course-print-char { opacity: 0; }
+.course-machine { position: absolute; left: 0; top: calc(var(--paper-slot) - 60px); width: 680px; aspect-ratio: 1536 / 1024; z-index: 2; }
+.course-machine > img { display: block; width: 100%; height: 100%; pointer-events: none; /* Remove the generated soft halo outside the machine without changing its artwork. */ clip-path: polygon(2.2% 30%,2.2% 27%,13.5% 6%,15.3% 6%,16.5% 8%,18% 8%,18.2% 5.3%,21.5% 5.3%,22.5% 8.5%,82.8% 8.5%,83% 5.1%,84.7% 5.1%,85.2% 9%,88.5% 10%,89.3% 15.5%,92.1% 15.5%,93.6% 17%,93.6% 28.5%,90.5% 30.5%,93% 50%,95.5% 90%,94% 95%,91% 96.5%,9.1% 96.5%,6% 94%,5.7% 88%,9.2% 50%,11% 30%,10.5% 27%,10.5% 21%,12.8% 16%,14.1% 12%,14.1% 10.8%,13.5% 10.8%,4.5% 27.5%,3.8% 30%); }
+.course-keys { position: absolute; inset: 0; pointer-events: none; }
+.course-key { position: absolute; display: block; background-repeat: no-repeat; transform-origin: center bottom; border-radius: 22%; }
+.course-striker { position: absolute; left: 49.6%; top: 25%; width: 1.2%; height: 7%; background: linear-gradient(90deg,#757070,#dfdad6 45%,#8b8580); border: 1px solid #666; border-radius: 2px; transform-origin: bottom; pointer-events: none; }
+@media (max-width: 767px) {
+  .pen-course { border-radius: 24px 24px 0 0; }
+  .pen-course .pen-course-stage { container-type: normal; width: 100%; aspect-ratio: auto; height: auto; padding: 44px var(--pen-gutter) 40px; }
+  .pen-course .pen-course-eyebrow { position: relative; top: auto; left: auto; font-size: 12px; }
+  .pen-course .pen-course-copy { position: relative; top: auto; left: auto; width: 100%; margin-top: 32px; transform: none; }
+  .pen-course .pen-course-copy h2 { font-size: 38px; }
+  .pen-course .pen-course-copy h2 .pen-highlight { font-size: 36px; }
+  .pen-course .pen-course-copy p { font-size: 17px; }
+  .pen-course .pen-course-copy .pen-button { font-size: 18px; }
+  .pen-course .pen-workflow { top: auto; left: 24px; bottom: 340px; font-size: 54px; }
+  .course-printer { position: relative; top: auto; right: auto; width: 100%; height: auto; max-width: 600px; margin: 32px auto 0; }
+  .pen-course-note { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .course-paper { transition: none; will-change: auto; }
+}

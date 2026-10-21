@@ -1,0 +1,17 @@
+.course-learning-path { position: relative; margin-top: 22px; width: 100%; max-width: 440px; }
+.course-path-connector { position: absolute; top: 12px; left: 16.667%; width: 66.666%; height: 2px; overflow: visible; pointer-events: none; }
+.course-path-connector path { fill: none; stroke-width: 2px; vector-effect: non-scaling-stroke; }
+.course-path-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; padding: 0; margin: 0; list-style: none; }
+.course-path-steps li { display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; }
+.course-path-number { position: relative; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--pen-purple); background: var(--pen-purple); color: white; font: 600 12px/1 var(--pen-font-latin); }
+.course-path-steps strong { font-size: clamp(12px, 1.05cqw, 15px); font-weight: 600; color: var(--pen-heading-ink); }
+.course-path-detail { font-size: clamp(10px, .84cqw, 12px); line-height: 1.5; color: var(--pen-body); }
+.pen-course .pen-course-copy .course-path-outcome { margin-top: 12px; font-size: clamp(11px, .9cqw, 13px); line-height: 1.5; color: var(--pen-purple); }
+.pen-course .pen-course-copy:has(.course-learning-path) > .pen-button { margin-top: 20px; }
+.pen-course .pen-course-copy:has(.course-learning-path) > .pen-course-note { margin-top: 12px; }
+@media (max-width: 767px) {
+  .course-learning-path { margin-top: 26px; max-width: 440px; }
+  .course-path-steps strong { font-size: 14px; }
+  .course-path-detail { font-size: 11px; }
+  .pen-course .pen-course-copy .course-path-outcome { font-size: 12px; }
+}
